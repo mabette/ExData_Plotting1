@@ -10,7 +10,8 @@ data_selected$Timing <- as.POSIXct(timing)
 # opening PNG file
 png("plot4.png", width=480, height=480)
 # plotting
-with(data_selected, {plot(Global_active_power~Timing, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+with(data_selected, {
+  plot(Global_active_power~Timing, type="l", ylab="Global Active Power (kilowatts)", xlab="")
   plot(Voltage~Timing, type="l", ylab="Voltage (volt)", xlab="")
   plot(Sub_metering_1~Timing, type="l", ylab="Global Active Power (kilowatts)", xlab="")
   lines(Sub_metering_2~Timing,col='Red')
