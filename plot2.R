@@ -7,8 +7,9 @@ data_selected$Date <- as.Date(data_selected$Date, format="%d/%m/%Y")
 timing <- paste(as.Date(data_selected$Date), data_selected$Time)
 # converting classes
 data_selected$Timing <- as.POSIXct(timing)
+# opening PNG file
+png("plot2.png", width=480, height=480)
 # plotting data
 with(data_selected, {plot(Global_active_power~Timing, type="l", ylab="Global Active Power (kilowatts)", xlab="")})
-# saving the plot
-png("plot2.png", width=480, height=480)
+# closing file
 dev.off()
